@@ -1,0 +1,147 @@
+{
+    "id": 17,
+    "campaign_id": false,
+    "source_id": false,
+    "medium_id": false,
+    "activity_ids": [],
+    "activity_state": false,
+    "activity_user_id": false,
+    "activity_type_id": false,
+    "activity_type_icon": false,
+    "activity_date_deadline": false,
+    "my_activity_date_deadline": false,
+    "activity_summary": false,
+    "activity_exception_decoration": false,
+    "activity_exception_icon": false,
+    "activity_calendar_event_id": false,
+    "message_is_follower": true,
+    "message_follower_ids": [
+        297
+    ],
+    "message_partner_ids": [
+        3
+    ],
+    "message_ids": [
+        380
+    ],
+    "has_message": true,
+    "message_needaction": false,
+    "message_needaction_counter": 0,
+    "message_has_error": false,
+    "message_has_error_counter": 0,
+    "message_attachment_count": 0,
+    "website_message_ids": [],
+    "message_has_sms_error": false,
+    "access_url": "/my/orders/17",
+    "access_token": false,
+    "access_warning": "",
+    "name": "S00017",
+    "company_id": [
+        1,
+        "My Company"
+    ],
+    "partner_id": [
+        19,
+        "testtting"
+    ],
+    "state": "draft",
+    "locked": false,
+    "client_order_ref": false,
+    "create_date": "2024-07-29T06:19:09.400801",
+    "commitment_date": false,
+    "date_order": "2024-07-29T06:19:04",
+    "origin": false,
+    "reference": false,
+    "require_signature": true,
+    "require_payment": false,
+    "prepayment_percent": 1,
+    "signature": false,
+    "signed_by": false,
+    "signed_on": false,
+    "validity_date": "2024-08-28",
+    "journal_id": false,
+    "note": false,
+    "partner_invoice_id": [
+        19,
+        "testtting"
+    ],
+    "partner_shipping_id": [
+        19,
+        "testtting"
+    ],
+    "fiscal_position_id": [
+        1,
+        "Egypt"
+    ],
+    "payment_term_id": false,
+    "pricelist_id": false,
+    "currency_id": [
+        74,
+        "EGP"
+    ],
+    "currency_rate": 1,
+    "user_id": [
+        2,
+        "Administrator"
+    ],
+    "team_id": [
+        1,
+        "Sales"
+    ],
+    "order_line": [],
+    "amount_untaxed": 0,
+    "amount_tax": 0,
+    "amount_total": 0,
+    "amount_to_invoice": 0,
+    "amount_invoiced": 0,
+    "invoice_count": 0,
+    "invoice_ids": [],
+    "invoice_status": "no",
+    "transaction_ids": [],
+    "authorized_transaction_ids": [],
+    "amount_paid": 0,
+    "analytic_account_id": false,
+    "tag_ids": [],
+    "amount_undiscounted": 0,
+    "country_code": "EG",
+    "expected_date": false,
+    "is_expired": false,
+    "partner_credit_warning": "",
+    "tax_calculation_rounding_method": "round_per_line",
+    "tax_country_id": [
+        65,
+        "Egypt"
+    ],
+    "tax_totals": {
+        "amount_untaxed": 0,
+        "amount_total": 0,
+        "formatted_amount_total": "0.00 LE",
+        "formatted_amount_untaxed": "0.00 LE",
+        "groups_by_subtotal": {},
+        "subtotals": [],
+        "subtotals_order": [],
+        "display_tax_base": false
+    },
+    "terms_type": "plain",
+    "type_name": "Quotation",
+    "show_update_fpos": false,
+    "has_active_pricelist": false,
+    "show_update_pricelist": false,
+    "display_name": "S00017",
+    "create_uid": [
+        2,
+        "Administrator"
+    ],
+    "write_uid": [
+        2,
+        "Administrator"
+    ],
+    "write_date": "2024-07-29T06:19:09.400801",
+    "pending_email_template_id": false,
+    "opportunity_id": false,
+    "sale_order_template_id": false,
+    "sale_order_option_ids": [],
+    "customer_phone": "0100082104",
+    "event_name": "order.create",
+    "order_url": "http://localhost:8069/web#id=17&view_type=form&model=sale.order"
+}

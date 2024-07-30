@@ -1,0 +1,41 @@
+<odoo>
+<record id="res_config_settings_view_form" model="ir.ui.view">
+  <field name="name">res.config.settings.view.form.inherit.mottasl</field>
+  <field name="model">res.config.settings</field>
+  <field name="priority" eval="6" />
+  <field name="inherit_id" ref="base.res_config_settings_view_form" />
+  <field name="arch" type="xml">
+    <xpath expr="//block[contains(@id,'user_default_rights')]" position="inside">
+      <div
+        class="app_settings_block"
+        data-string="Mottasl"
+        string="Mottasl"
+        data-key="mottasl"
+      >
+        <h2>Mottasl</h2>
+        <div class="row mt16 o_settings_container">
+          <div class="col-lg-6 o_setting_box">
+            <div class="o_setting_right_pane">
+              <label for="mottasl_api_key" /><span>*</span>
+              <div class="text-muted">Mottasl API Key related to your Mottasl account</div>
+              <div>
+                <field name="mottasl_api_key" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </xpath>
+  </field>
+</record>
+
+<record id="mottasl_config_settings_action" model="ir.actions.act_window">
+  <field name="name">Settings</field>
+  <field name="type">ir.actions.act_window</field>
+  <field name="res_model">res.config.settings</field>
+  <field name="view_id" ref="res_config_settings_view_form" />
+  <field name="view_mode">form</field>
+  <field name="target">inline</field>
+  <field name="context">{'module': 'mottasl', 'bin_size': False}</field>
+</record>
+</odoo>

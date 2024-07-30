@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="menu_mottasl_root" name="mottasl"/>
+    <menuitem id="mottasl_api_key" name="api key" parent="menu_mottasl_root" action="action_api_key"/>
+</odoo>

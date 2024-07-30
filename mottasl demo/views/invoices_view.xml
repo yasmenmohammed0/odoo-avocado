@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+  <record id="action_api_key" model="ir.actions.act_window">
+            <field name="name">api configuration</field>
+            <field name="res_model">api.conf</field>
+            <field name="view_mode">tree,form</field>
+
+            <field name="help" type="html">
+                <p>
+                    Add your api key
+                </p>
+            </field>
+        </record>
+    </data>
+
+</odoo>

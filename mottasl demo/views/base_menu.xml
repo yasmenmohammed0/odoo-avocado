@@ -1,0 +1,16 @@
+<odoo>
+    <menuitem
+    id="mottasl_menu_root"
+    name="mottasl"/>
+
+
+<menuitem id="menu_rma_global_settings"
+  name="Settings"
+ />
+     <menuitem
+    id="settings_menu"
+    name="settings from mottasl"
+     parent="mottasl_menu_root"
+     />
+
+</odoo>
