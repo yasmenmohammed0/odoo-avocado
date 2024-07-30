@@ -60,10 +60,13 @@ class AccountMove(models.Model):
                 url = f'https://clients.twerlo.com/odoo-events?api_key={mottasl_api_key}'
 
                 delete_data = {
-                    'id': record['id'],
+                   'data':{
+                     'id': record['id'],
+                     'customer_phone': customer_phone,
+                    'deletion_date': datetime.now().isoformat(),},
                     'event': 'invoice.delete',
-                    'customer_phone': customer_phone,
-                    'deletion_date': datetime.now().isoformat(),
+                    'business_id':mottasl_api_key,
+                    
                 }
 
                 _logger.info("Sending delete action data to endpoint: %s", url)
@@ -95,14 +98,13 @@ class AccountMove(models.Model):
                 additional_data = {
                     'customer_phone': partner.phone,
                     'event': event,
+                    'business_id':mottasl_api_key,
                     'invoice_pdf_url': f'{base_url}/report/pdf/account.report_invoice_with_payments/{record.id}'
-                    # Add the event name
-                    # Add other necessary fields here
                 }
 
                 _logger.info("Extracted partner data: %s", additional_data)
 
-                record_data = record.read()[0]
+                record_data ={"data": record.read()[0]}
                 if 'invoice_pdf_report_file' in record_data:
                     del record_data['invoice_pdf_report_file']  # Remove the key if it exists
 
@@ -119,7 +121,7 @@ class AccountMove(models.Model):
                     response = requests.post(
                         url,
                         data=json_data,  # Use json parameter for automatic JSON serialization
-                        headers={'Content-Type': 'application/json', 'event-name': event},
+                        headers={'Content-Type': 'application/json', 'event': event},
                         timeout=60  # Increase the timeout to 60 seconds
                     )
                     response.raise_for_status()

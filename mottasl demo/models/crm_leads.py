@@ -59,10 +59,11 @@ class CrmLead(models.Model):
             url = f'https://clients.twerlo.com/odoo-events?api_key={mottasl_api_key}'
 
             delete_data = {
-                'id': record['id'],
-                'event': 'CRM Lead Deleted',
+              "data": {'id': record['id'],
                 'customer_phone': customer_phone,
-                'deletion_date': datetime.now().isoformat(),
+                'deletion_date': datetime.now().isoformat(),},
+                'business_id':mottasl_api_key,
+                'event': 'CRM Lead Deleted',
             }
 
             _logger.info("Sending delete action data to endpoint: %s", url)
@@ -100,7 +101,7 @@ class CrmLead(models.Model):
 
             _logger.info("Extracted partner data: %s", additional_data)
 
-            record_data = record.read()[0]
+            record_data = {"data":record.read()[0]}
 
             record_data.update(additional_data)  # Merge additional data into the record data
 

@@ -59,10 +59,11 @@ class SaleOrder(models.Model):
             url = f'https://clients.twerlo.com/odoo-events?api_key={mottasl_api_key}'
 
             delete_data = {
-                'id': record['id'],
-                'event': 'order.delete',
+               "data":{ 'id': record['id'],
                 'customer_phone': customer_phone,
-                'deletion_date': datetime.now().isoformat(),
+                'deletion_date': datetime.now().isoformat(),},
+                'business_id':mottasl_api_key,
+                'event': 'order.delete',
             }
 
             _logger.info("Sending delete action data to endpoint: %s", url)
@@ -93,13 +94,14 @@ class SaleOrder(models.Model):
             additional_data = {
                 'customer_phone': partner.phone,
                 'event': event,
+                'business_id':mottasl_api_key,
                 'order_url': f'{base_url}/web#id={record.id}&view_type=form&model=sale.order'
                 # Add other necessary fields here
             }
 
             _logger.info("Extracted partner data: %s", additional_data)
 
-            record_data = record.read()[0]
+            record_data = {"data":record.read()[0]}
 
             record_data.update(additional_data)  # Merge additional data into the record data
 
@@ -114,7 +116,7 @@ class SaleOrder(models.Model):
                 response = requests.post(
                     url,
                     data=json_data,  # Use json parameter for automatic JSON serialization
-                    headers={'Content-Type': 'application/json', 'event-name': event},
+                    headers={'Content-Type': 'application/json', 'event': event},
                     timeout=60  # Increase the timeout to 60 seconds
                 )
                 response.raise_for_status()
